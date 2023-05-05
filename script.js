@@ -5,7 +5,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt('Please choose your weapon: ', '');
+    playerSelection = prompt('Please choose your weapon: ', '').toLowerCase();
     computerSelection = getComputerChoice();
 
     if (playerSelection === computerSelection) {
@@ -30,12 +30,8 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-    
-    let win = 3;
-    if (playerSelection === win)
-        console.log("You are the winner!");
-    } else {
-        console.log("Bot is the winner!");
-    }
-    playRound();
+    console.log(playRound());
 }
+
+}
+game();
