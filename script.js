@@ -1,6 +1,7 @@
 function getComputerChoice() {
     let choice = ['rock', 'paper', 'scissor'];
     let result = choice[Math.floor( Math.random()*choice.length )];
+    return result;
 }
 getComputerChoice();
 console.log(getComputerChoice());
