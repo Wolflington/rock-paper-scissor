@@ -3,8 +3,6 @@ function getComputerChoice() {
     let result = choice[Math.floor( Math.random()*choice.length )];
     return result;
 }
-getComputerChoice();
-console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt('Please choose your weapon: ', '');
@@ -29,4 +27,10 @@ function playRound(playerSelection, computerSelection) {
     }
     
 }
-playRound();
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let win = 3;
+    }
+    playRound();
+}
