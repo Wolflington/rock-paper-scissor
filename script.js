@@ -30,7 +30,12 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        let win = 3;
+    
+    let win = 3;
+    if (playerSelection === win)
+        console.log("You are the winner!");
+    } else {
+        console.log("Bot is the winner!");
     }
     playRound();
 }
