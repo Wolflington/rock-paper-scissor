@@ -8,6 +8,7 @@ let playerSelection;
 let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
+let win = 3;
 
 game();
 
@@ -42,8 +43,23 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
+function winCondition() {
+    if (playerScore >= 3) {
+        return `You won against computer! Final score: ${playerScore} | ${computerScore}`;
+    } else if (computerScore >= 3) {
+        return `You lost against a computer. You suck! Final score: ${playerScore} | ${computerScore}`;
+    }
+}
+
 function game() {
-    for (let i = 0; i < 5; i++) {
-    console.log(playRound());
+    while (playerScore < 3 || computerScore < 3){
+        if (playerScore >= 3) {
+            return playerScore;
+        } else if (computerScore >= 3) {
+            return computerScore;
+        }
+        console.log(playRound());
+    }
+
 }
-}
+
