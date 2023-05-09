@@ -14,29 +14,28 @@ game();
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt('Please choose your weapon: ', '').toLowerCase();
     computerSelection = getComputerChoice();
-
     if (playerSelection === computerSelection) {
-        return `It's a tie! You chose ${playerSelection}.`;
+        return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
     } 
     else if (playerSelection === 'rock' && computerSelection === 'scissor') {
         playerScore++;
-        return `You win! Rock crushes scissor!`;
+        return `You win! Rock crushes scissor! Current score: ${playerScore} | ${computerScore}`;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
-        return 'You win! Paper covers rock!';
+        return `You win! Paper covers rock! Current score: ${playerScore} | ${computerScore}`;
     } else if (playerSelection === 'scissor' && computerSelection === 'paper') {
         playerScore++;
-        return 'You win! Scissor cuts paper!';
+        return `You win! Scissor cuts paper! Current score: ${playerScore} | ${computerScore}`;
     } 
     else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore++;
-        return 'You lose. Paper covers rock.';
+        return `You lose. Paper covers rock. Current score: ${playerScore} | ${computerScore}`;
     } else if (playerSelection === 'paper' && computerSelection === 'scissor') {
         computerScore++;
-        return 'You lose. Scissor cuts paper.';
+        return `You lose. Scissor cuts paper. Current score: ${playerScore} | ${computerScore}`;
     } else if (playerSelection === 'scissor' && computerSelection === 'rock') {
         computerScore++;
-        return 'You lose. Rock crushes scissor.';
+        return `You lose. Rock crushes scissor. Current score: ${playerScore} | ${computerScore}`;
     } else {
         return 'Enter a valid move!'
     }
