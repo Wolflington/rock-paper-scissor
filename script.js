@@ -45,21 +45,22 @@ function playRound(playerSelection, computerSelection) {
 
 function winCondition() {
     if (playerScore >= 3) {
-        return `You won against computer! Final score: ${playerScore} | ${computerScore}`;
+        return `You won against a computer!`;
     } else if (computerScore >= 3) {
-        return `You lost against a computer. You suck! Final score: ${playerScore} | ${computerScore}`;
+        return `You lost against a computer. You suck!`;
     }
 }
 
 function game() {
     while (playerScore < 3 || computerScore < 3){
         if (playerScore >= 3) {
+            console.log(winCondition());
             return playerScore;
         } else if (computerScore >= 3) {
+            console.log(winCondition());
             return computerScore;
         }
         console.log(playRound());
     }
 
 }
-
