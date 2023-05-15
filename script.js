@@ -40,7 +40,6 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return 'Enter a valid move!'
     }
-    
 }
 
 function winCondition() {
@@ -52,15 +51,15 @@ function winCondition() {
 }
 
 function game() {
-    while (playerScore < 3 || computerScore < 3){
-        if (playerScore >= 3) {
+    const i = 0;
+    while (i < 10){
+        if (playerScore >= 5) {
             console.log(winCondition());
             return playerScore;
-        } else if (computerScore >= 3) {
+        } else if (computerScore >= 5) {
             console.log(winCondition());
             return computerScore;
         }
         console.log(playRound());
     }
-
 }
