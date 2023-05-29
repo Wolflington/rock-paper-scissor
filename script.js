@@ -8,12 +8,34 @@ let playerSelection;
 let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
-let win = 3;
 
-game();
+// game();
+playRound();
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt('Please choose your weapon: ', '').toLowerCase();
+    playerSelection;
+
+    let rockBtn = document.querySelector('#rock');
+    rockBtn.addEventListener('click', () => {
+    let x = document.getElementById('rock').value;
+    document.getElementById('player-selection').textContent = x;
+    console.log(x);
+    });
+
+    let paperBtn = document.querySelector('#paper');
+    paperBtn.addEventListener('click', () => {
+    let y = document.getElementById('paper').value;
+    document.getElementById('player-selection').textContent = y;
+    console.log(y);
+    });
+
+    let scissorBtn = document.querySelector('#scissor');
+    scissorBtn.addEventListener('click', () => {
+    let z = document.getElementById('scissor').value;
+    document.getElementById('player-selection').textContent = z;
+    console.log(z);
+    });
+
     computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
         return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
@@ -43,23 +65,23 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function winCondition() {
-    if (playerScore >= 3) {
+    if (playerScore >= 5) {
         return `You won against a computer!`;
-    } else if (computerScore >= 3) {
+    } else if (computerScore >= 5) {
         return `You lost against a computer. You suck!`;
     }
 }
 
-function game() {
-    const i = 0;
-    while (i < 10){
-        if (playerScore >= 5) {
-            console.log(winCondition());
-            return playerScore;
-        } else if (computerScore >= 5) {
-            console.log(winCondition());
-            return computerScore;
-        }
-        console.log(playRound());
-    }
-}
+// function game() {
+//     const i = 0;
+//     while (i < 10){
+//         if (playerScore >= 5) {
+//             console.log(winCondition());
+//             return playerScore;
+//         } else if (computerScore >= 5) {
+//             console.log(winCondition());
+//             return computerScore;
+//         }
+//         console.log(playRound());
+//     }
+// }
