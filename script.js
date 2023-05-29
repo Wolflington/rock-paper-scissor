@@ -13,27 +13,25 @@ let computerScore = 0;
 playRound();
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection;
-
     let rockBtn = document.querySelector('#rock');
     rockBtn.addEventListener('click', () => {
-    let x = document.getElementById('rock').value;
-    document.getElementById('player-selection').textContent = x;
-    console.log(x);
+    playerSelection = document.getElementById('rock').value;
+    document.getElementById('player-selection').textContent = playerSelection;
+    console.log(playerSelection);
     });
 
     let paperBtn = document.querySelector('#paper');
     paperBtn.addEventListener('click', () => {
-    let y = document.getElementById('paper').value;
-    document.getElementById('player-selection').textContent = y;
-    console.log(y);
+    playerSelection = document.getElementById('paper').value;
+    document.getElementById('player-selection').textContent = playerSelection ;
+    console.log(playerSelection );
     });
 
     let scissorBtn = document.querySelector('#scissor');
     scissorBtn.addEventListener('click', () => {
-    let z = document.getElementById('scissor').value;
-    document.getElementById('player-selection').textContent = z;
-    console.log(z);
+    playerSelection = document.getElementById('scissor').value;
+    document.getElementById('player-selection').textContent = playerSelection ;
+    console.log(playerSelection );
     });
 
     computerSelection = getComputerChoice();
