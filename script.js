@@ -1,7 +1,14 @@
 function getComputerChoice() {
+    let button = document.querySelectorAll('button');
+    button.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            let compSelect = document.querySelector('#computer-choice');
+            compSelect.textContent = result;
+            console.log(result);
+        });
+    });
     let choice = ['rock', 'paper', 'scissor'];
-    let result = choice[Math.floor( Math.random()*choice.length )];
-    return result;
+    let result = choice[Math.floor(Math.random()*choice.length)];
 }
 //global variables
 let playerSelection;
@@ -9,32 +16,33 @@ let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
 
-// game();
-playRound();
+game();
+// playRound();
 
 function playRound(playerSelection, computerSelection) {
+    computerSelection = getComputerChoice();
     let rockBtn = document.querySelector('#rock');
     rockBtn.addEventListener('click', () => {
-    playerSelection = document.getElementById('rock').value;
-    document.getElementById('player-selection').textContent = playerSelection;
-    console.log(playerSelection);
+        playerSelection = document.getElementById('rock').value;
+        document.getElementById('player-selection').textContent = playerSelection;
+        console.log(playerSelection);
     });
 
     let paperBtn = document.querySelector('#paper');
     paperBtn.addEventListener('click', () => {
-    playerSelection = document.getElementById('paper').value;
-    document.getElementById('player-selection').textContent = playerSelection ;
-    console.log(playerSelection );
+        playerSelection = document.getElementById('paper').value;
+        document.getElementById('player-selection').textContent = playerSelection ;
+        console.log(playerSelection);
     });
 
     let scissorBtn = document.querySelector('#scissor');
     scissorBtn.addEventListener('click', () => {
-    playerSelection = document.getElementById('scissor').value;
-    document.getElementById('player-selection').textContent = playerSelection ;
-    console.log(playerSelection );
+        playerSelection = document.getElementById('scissor').value;
+        document.getElementById('player-selection').textContent = playerSelection ;
+        console.log(playerSelection);
     });
 
-    computerSelection = getComputerChoice();
+
     if (playerSelection === computerSelection) {
         return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
     } 
@@ -63,23 +71,19 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function winCondition() {
-    if (playerScore >= 5) {
+    if (playerScore == 5) {
+        playerScore = 0;
         return `You won against a computer!`;
-    } else if (computerScore >= 5) {
+    } else if (computerScore == 5) {
+        computerScore = 0;
         return `You lost against a computer. You suck!`;
     }
 }
 
-// function game() {
-//     const i = 0;
-//     while (i < 10){
-//         if (playerScore >= 5) {
-//             console.log(winCondition());
-//             return playerScore;
-//         } else if (computerScore >= 5) {
-//             console.log(winCondition());
-//             return computerScore;
-//         }
-//         console.log(playRound());
-//     }
-// }
+function game() {
+    let buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', playRound);
+    });
+    winCondition();
+}
