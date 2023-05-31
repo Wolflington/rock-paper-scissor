@@ -1,48 +1,22 @@
-function getComputerChoice() {
-    let button = document.querySelectorAll('button');
-    button.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            let compSelect = document.querySelector('#computer-choice');
-            compSelect.textContent = result;
-            console.log(result);
-        });
-    });
-    let choice = ['rock', 'paper', 'scissor'];
-    let result = choice[Math.floor(Math.random()*choice.length)];
-}
 //global variables
 let playerSelection;
 let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
 
+function getComputerChoice() {
+    let choice = ['rock', 'paper', 'scissor'];
+    let result = choice[Math.floor(Math.random()*choice.length)];
+    let compSelect = document.querySelector('#computer-choice');
+    return compSelect.textContent = result;
+}
 game();
 // playRound();
 
 function playRound(playerSelection, computerSelection) {
+
     computerSelection = getComputerChoice();
-    let rockBtn = document.querySelector('#rock');
-    rockBtn.addEventListener('click', () => {
-        playerSelection = document.getElementById('rock').value;
-        document.getElementById('player-selection').textContent = playerSelection;
-        console.log(playerSelection);
-    });
-
-    let paperBtn = document.querySelector('#paper');
-    paperBtn.addEventListener('click', () => {
-        playerSelection = document.getElementById('paper').value;
-        document.getElementById('player-selection').textContent = playerSelection ;
-        console.log(playerSelection);
-    });
-
-    let scissorBtn = document.querySelector('#scissor');
-    scissorBtn.addEventListener('click', () => {
-        playerSelection = document.getElementById('scissor').value;
-        document.getElementById('player-selection').textContent = playerSelection ;
-        console.log(playerSelection);
-    });
-
-
+    console.log(computerSelection)
     if (playerSelection === computerSelection) {
         return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
     } 
