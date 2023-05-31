@@ -10,11 +10,10 @@ function getComputerChoice() {
     let compSelect = document.querySelector('#computer-choice');
     return compSelect.textContent = result;
 }
-game();
-// playRound();
+
 
 function playRound(playerSelection, computerSelection) {
-
+    playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(computerSelection)
     if (playerSelection === computerSelection) {
@@ -61,3 +60,5 @@ function game() {
     });
     winCondition();
 }
+
+game();
