@@ -11,11 +11,11 @@ function getComputerChoice() {
     return compSelect.textContent = result;
 }
 
-
 function playRound(playerSelection, computerSelection) {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(computerSelection)
+    console.log(playerSelection);
+    console.log(computerSelection);
     if (playerSelection === computerSelection) {
         return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
     } 
@@ -44,11 +44,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function winCondition() {
+    playerScore = 0;
+    computerScore = 0;
     if (playerScore == 5) {
-        playerScore = 0;
         return `You won against a computer!`;
     } else if (computerScore == 5) {
-        computerScore = 0;
         return `You lost against a computer. You suck!`;
     }
 }
