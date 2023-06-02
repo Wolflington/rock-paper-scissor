@@ -3,6 +3,10 @@ let playerSelection;
 let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+
 
 function getComputerChoice() {
     let choice = ['rock', 'paper', 'scissor'];
@@ -11,8 +15,9 @@ function getComputerChoice() {
     return compSelect.textContent = result;
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = getPlayerChoice();
+
+function playRound(e) {
+    playerSelection = e.target.id;
     computerSelection = getComputerChoice();
     console.log(playerSelection);
     console.log(computerSelection);
