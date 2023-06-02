@@ -24,6 +24,9 @@ function playRound(e) {
     choiceDisplay.textContent = playerSelection;
     console.log(playerSelection);
     console.log(computerSelection);
+}
+
+function determineWinner (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
     } 
