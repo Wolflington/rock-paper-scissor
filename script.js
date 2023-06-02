@@ -7,18 +7,21 @@ const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 
-
-function getComputerChoice() {
-    let choice = ['rock', 'paper', 'scissor'];
-    let result = choice[Math.floor(Math.random()*choice.length)];
-    let compSelect = document.querySelector('#computer-choice');
-    return compSelect.textContent = result;
+function game() {
+    let buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', playRound);
+    });
+    winCondition();
 }
 
+game();
 
 function playRound(e) {
     playerSelection = e.target.id;
     computerSelection = getComputerChoice();
+    let choiceDisplay = document.querySelector('#player-selection');
+    choiceDisplay.textContent = playerSelection;
     console.log(playerSelection);
     console.log(computerSelection);
     if (playerSelection === computerSelection) {
@@ -58,12 +61,9 @@ function winCondition() {
     }
 }
 
-function game() {
-    let buttons = document.querySelectorAll('button');
-    buttons.forEach(btn => {
-        btn.addEventListener('click', playRound);
-    });
-    winCondition();
+function getComputerChoice() {
+    let choice = ['rock', 'paper', 'scissor'];
+    let result = choice[Math.floor(Math.random()*choice.length)];
+    let compSelect = document.querySelector('#computer-choice');
+    return compSelect.textContent = result;
 }
-
-game();
