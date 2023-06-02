@@ -24,11 +24,19 @@ function playRound(e) {
     choiceDisplay.textContent = playerSelection;
     console.log(playerSelection);
     console.log(computerSelection);
+    determineWinner();
 }
 
 function determineWinner (playerSelection, computerSelection) {
+    let playerScoreboard = document.querySelector('#player-score');
+    playerScoreboard.textContent = playerScore;
+    let computerScoreboard = document.querySelector('#computer-score');
+    computerScoreboard.textContent = playerScore;
+    let result = document.querySelector('#result');
+
     if (playerSelection === computerSelection) {
-        return `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
+        result.textContent = `It's a tie! You chose ${playerSelection}. Current score: ${playerScore} | ${computerScore}`;
+        return;
     } 
     else if (playerSelection === 'rock' && computerSelection === 'scissor') {
         playerScore++;
