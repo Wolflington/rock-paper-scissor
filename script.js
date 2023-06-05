@@ -1,6 +1,9 @@
 //global variables
 let playerSelection;
 let computerSelection;
+let choiceDisplay = document.querySelector('#player-selection');
+let playerScoreboard = document.querySelector('#player-score');
+let computerScoreboard = document.querySelector('#computer-score');
 let result = document.querySelector('#result');
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
@@ -22,12 +25,9 @@ game();
 function playRound(e) {
     playerSelection = e.target.id;
     computerSelection = getComputerChoice();
-    let choiceDisplay = document.querySelector('#player-selection');
     choiceDisplay.textContent = playerSelection;
     const winner = determineWinner(playerSelection, computerSelection);
-    let playerScoreboard = document.querySelector('#player-score');
     playerScoreboard.textContent = `Player: ${scoreboard.player}`;
-    let computerScoreboard = document.querySelector('#computer-score');
     computerScoreboard.textContent = `Computer: ${scoreboard.computer}`;
     console.log(scoreboard.player);
     console.log(scoreboard.computer);
@@ -71,10 +71,11 @@ function determineWinner (playerSelection, computerSelection) {
 }
 
 function winCondition() {
-    if (scoreboard.player == 5) {
+    endGame();
+    if (scoreboard.player === 5) {
         result.textContent = `You won against a computer!`;
         return;
-    } else if (scoreboard.computer == 5) {
+    } else if (scoreboard.computer === 5) {
         result.textContent = `You lost against a computer. You suck!`;
         return;
     }
@@ -85,4 +86,28 @@ function getComputerChoice() {
     let result = choice[Math.floor(Math.random()*choice.length)];
     let compSelect = document.querySelector('#computer-choice');
     return compSelect.textContent = result;
+}
+
+function endGame() {
+    if (scoreboard.player == 5) {
+        result.textContent = '';
+        playerScoreboard.textContent = `Player: `;
+        computerScoreboard.textContent = `Computer: `;
+        scoreboard.player = 0;
+        scoreboard.computer = 0;
+        choiceDisplay.textContent = ``
+        let compSelect = document.querySelector('#computer-choice');
+        compSelect.textContent = ``
+        alert ('You won against a computer! Play again?');
+    } else if (scoreboard.computer == 5){
+        result.textContent = '';
+        playerScoreboard.textContent = ``;
+        computerScoreboard.textContent = ``;
+        scoreboard.player = 0;
+        scoreboard.computer = 0;
+        choiceDisplay.textContent = ``
+        let compSelect = document.querySelector('#computer-choice');
+        compSelect.textContent = ``
+        alert ('You lost against a computer. Play again?')
+    }
 }
