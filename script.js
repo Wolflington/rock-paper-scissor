@@ -48,7 +48,7 @@ function determineWinner (playerSelection, computerSelection) {
         result.textContent = `You win! Paper covers rock!`;
         return;
     } else if (playerSelection === 'scissor' && computerSelection === 'paper') {
-        scoreboard.player;
+        scoreboard.player++;
         result.textContent = `You win! Scissor cuts paper!`;
         return;
     } 
