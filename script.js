@@ -1,18 +1,20 @@
 //global variables
 let playerSelection;
 let computerSelection;
-let playerScore = 0;
-let computerScore = 0;
+let result = document.querySelector('#result');
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
+const scoreboard = {
+    player: 0,
+    computer: 0
+};
 
 function game() {
     let buttons = document.querySelectorAll('button');
     buttons.forEach(btn => {
         btn.addEventListener('click', playRound);
     });
-    winCondition();
 }
 
 game();
@@ -22,55 +24,59 @@ function playRound(e) {
     computerSelection = getComputerChoice();
     let choiceDisplay = document.querySelector('#player-selection');
     choiceDisplay.textContent = playerSelection;
-    console.log(playerSelection);
-    console.log(computerSelection);
+    const winner = determineWinner(playerSelection, computerSelection);
     let playerScoreboard = document.querySelector('#player-score');
-    playerScoreboard.textContent = `Player: ${playerScore}`;
+    playerScoreboard.textContent = `Player: ${scoreboard.player}`;
     let computerScoreboard = document.querySelector('#computer-score');
-    computerScoreboard.textContent = `Computer: ${computerScore
-    }`;
-    const winner = determineWinner();
-    console.log(winner);
+    computerScoreboard.textContent = `Computer: ${scoreboard.computer}`;
+    console.log(scoreboard.player);
+    console.log(scoreboard.computer);
+    winCondition();
 }
 
 function determineWinner (playerSelection, computerSelection) {
-    let result = document.querySelector('#result');
-
     if (playerSelection === computerSelection) {
         result.textContent = `It's a tie!`;
         return;
     } 
     else if (playerSelection === 'rock' && computerSelection === 'scissor') {
-        playerScore++;
-        return `You win! Rock crushes scissor! Current score: ${playerScore} | ${computerScore}`;
+        scoreboard.player++;
+        result.textContent = `You win! Rock crushes scissor!`;
+        return;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore++;
-        return `You win! Paper covers rock! Current score: ${playerScore} | ${computerScore}`;
+        scoreboard.player++;
+        result.textContent = `You win! Paper covers rock!`;
+        return;
     } else if (playerSelection === 'scissor' && computerSelection === 'paper') {
-        playerScore++;
-        return `You win! Scissor cuts paper! Current score: ${playerScore} | ${computerScore}`;
+        scoreboard.player;
+        result.textContent = `You win! Scissor cuts paper!`;
+        return;
     } 
     else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        computerScore++;
-        return `You lose. Paper covers rock. Current score: ${playerScore} | ${computerScore}`;
+        scoreboard.computer++;
+        result.textContent = `You lose. Paper covers rock.`;
+        return;
     } else if (playerSelection === 'paper' && computerSelection === 'scissor') {
-        computerScore++;
-        return `You lose. Scissor cuts paper. Current score: ${playerScore} | ${computerScore}`;
+        scoreboard.computer++;
+        result.textContent = `You lose. Scissor cuts paper.`;
+        return;
     } else if (playerSelection === 'scissor' && computerSelection === 'rock') {
-        computerScore++;
-        return `You lose. Rock crushes scissor. Current score: ${playerScore} | ${computerScore}`;
+        scoreboard.computer++;
+        result.textContent = `You lose. Rock crushes scissor.`;
+        return;
     } else {
-        return 'Enter a valid move!'
+        result.textContent = `Something went wrong. Please refresh the page.`;
+        return;
     }
 }
 
 function winCondition() {
-    playerScore = 0;
-    computerScore = 0;
-    if (playerScore == 5) {
-        return `You won against a computer!`;
-    } else if (computerScore == 5) {
-        return `You lost against a computer. You suck!`;
+    if (scoreboard.player == 5) {
+        result.textContent = `You won against a computer!`;
+        return;
+    } else if (scoreboard.computer == 5) {
+        result.textContent = `You lost against a computer. You suck!`;
+        return;
     }
 }
 
