@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="style.css">
     <script src = script.js defer></script>
 </head>
 <body>
+    <h1>ROCK, PAPER, AND SCISSORS!!</h1>
+    <h2>CHOOSE YOUR WEAPON:</h2>
     <div class="btn-container">
         <button id = "rock" value = "rock">Rock</button>
         <button id = "paper" value = "paper">Paper</button>
@@ -15,17 +18,19 @@
     </div>
 
     <div class = "selection-container" >
-        <p>Player:</p>
+        <p id="player">Player:</p>
         <p id = "player-selection"></p>
         <p id="comp">Computer:</p>
         <p id = "computer-choice"></p>
-
+    </div>
+    <div class="result-container"> 
         <p id ="result-container">Result:</p>
         <p id ="result"></p>
-        
+    </div>
+    <div class="score-container">
         <p id ="score">Score: </p>
         <p id="player-score"></p>
         <p id="computer-score"></p>
-    </div>
+    </div>   
 </body>
 </html>
