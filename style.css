@@ -22,3 +22,22 @@ h2 {
     justify-content: center;
     align-items: center;
 }
+
+button {
+    margin: 0px 50px 20px 50px;
+    height: 250px;
+    width: 250px;
+    border-radius: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* background-color: transparent; */
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
