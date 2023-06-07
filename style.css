@@ -40,11 +40,24 @@ button {
 }
 
 img {
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
 }
 
 .btn-container {
     display: flex;
     justify-content: center;
+    margin-top: -75px;
+    margin-bottom: 25px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
 }
