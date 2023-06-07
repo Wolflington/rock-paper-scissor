@@ -93,23 +93,23 @@ function getComputerChoice() {
 function endGame() {
     if (scoreboard.player == 5) {
         result.textContent = '';
-        playerScoreboard.textContent = `Player: `;
-        computerScoreboard.textContent = `Computer: `;
+        playerScoreboard.textContent = `Player: 0`;
+        computerScoreboard.textContent = `Computer: 0`;
         scoreboard.player = 0;
         scoreboard.computer = 0;
         choiceDisplay.textContent = ``
         let compSelect = document.querySelector('#computer-choice');
         compSelect.textContent = ``
-        alert (`You won against a computer! Final Standing: Player: ${scoreboard.player} | Computer: ${scoreboard.computer} Play again?`);
+        alert ('You won against a computer! Play again?');
     } else if (scoreboard.computer == 5){
         result.textContent = ``;
-        playerScoreboard.textContent = ``;
-        computerScoreboard.textContent = ``;
+        playerScoreboard.textContent = `Player: 0`;
+        computerScoreboard.textContent = `Computer: 0`;
         scoreboard.player = 0;
         scoreboard.computer = 0;
         choiceDisplay.textContent = ``
         let compSelect = document.querySelector('#computer-choice');
         compSelect.textContent = ``
-        alert (`You lost against a computer. Final Standing: Player: ${scoreboard.player} | Computer: ${scoreboard.computer} Play again?`)
+        alert ('You lost against a computer. Play again?')
     }
 }
