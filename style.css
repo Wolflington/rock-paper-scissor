@@ -31,10 +31,15 @@ button {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* background-color: transparent; */
+    background-color: transparent;
     color: black;
     font-family: 'Press Start 2P', cursive;
     border: none;
+}
+
+img {
+    height: 250px;
+    width: 250px;
 }
 
 .btn-container {
