@@ -23,12 +23,14 @@ function game() {
 game();
 
 function playRound(e) {
-    playerSelection = e.target.id;
+    playerSelection = e.currentTarget.value;
     computerSelection = getComputerChoice();
-    choiceDisplay.textContent = playerSelection;
+    choiceDisplay.innerHTML = playerSelection;
     const winner = determineWinner(playerSelection, computerSelection);
     playerScoreboard.textContent = `Player: ${scoreboard.player}`;
     computerScoreboard.textContent = `Computer: ${scoreboard.computer}`;
+    console.log(playerSelection);
+    console.log(computerSelection);
     console.log(scoreboard.player);
     console.log(scoreboard.computer);
     winCondition();
@@ -100,7 +102,7 @@ function endGame() {
         compSelect.textContent = ``
         alert ('You won against a computer! Play again?');
     } else if (scoreboard.computer == 5){
-        result.textContent = '';
+        result.textContent = ``;
         playerScoreboard.textContent = ``;
         computerScoreboard.textContent = ``;
         scoreboard.player = 0;
