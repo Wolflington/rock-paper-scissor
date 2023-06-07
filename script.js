@@ -41,28 +41,28 @@ function determineWinner (playerSelection, computerSelection) {
         result.textContent = `It's a tie!`;
         return;
     } 
-    else if (playerSelection === 'rock' && computerSelection === 'scissor') {
+    else if (playerSelection === 'Rock' && computerSelection === 'Scissor') {
         scoreboard.player++;
         result.textContent = `You win! Rock crushes scissor!`;
         return;
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
         scoreboard.player++;
         result.textContent = `You win! Paper covers rock!`;
         return;
-    } else if (playerSelection === 'scissor' && computerSelection === 'paper') {
+    } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
         scoreboard.player++;
         result.textContent = `You win! Scissor cuts paper!`;
         return;
     } 
-    else if (playerSelection === 'rock' && computerSelection === 'paper') {
+    else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
         scoreboard.computer++;
         result.textContent = `You lose. Paper covers rock.`;
         return;
-    } else if (playerSelection === 'paper' && computerSelection === 'scissor') {
+    } else if (playerSelection === 'Paper' && computerSelection === 'Scissor') {
         scoreboard.computer++;
         result.textContent = `You lose. Scissor cuts paper.`;
         return;
-    } else if (playerSelection === 'scissor' && computerSelection === 'rock') {
+    } else if (playerSelection === 'Scissor' && computerSelection === 'Rock') {
         scoreboard.computer++;
         result.textContent = `You lose. Rock crushes scissor.`;
         return;
@@ -84,7 +84,7 @@ function winCondition() {
 }
 
 function getComputerChoice() {
-    let choice = ['rock', 'paper', 'scissor'];
+    let choice = ['Rock', 'Paper', 'Scissor'];
     let result = choice[Math.floor(Math.random()*choice.length)];
     let compSelect = document.querySelector('#computer-choice');
     return compSelect.textContent = result;
