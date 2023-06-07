@@ -61,3 +61,13 @@ img {
     justify-content: space-between;
     width: 500px;
 }
+
+.selection-container {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
