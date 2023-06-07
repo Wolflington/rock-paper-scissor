@@ -100,7 +100,7 @@ function endGame() {
         choiceDisplay.textContent = ``
         let compSelect = document.querySelector('#computer-choice');
         compSelect.textContent = ``
-        alert ('You won against a computer! Play again?');
+        alert (`You won against a computer! Final Standing: Player: ${scoreboard.player} | Computer: ${scoreboard.computer} Play again?`);
     } else if (scoreboard.computer == 5){
         result.textContent = ``;
         playerScoreboard.textContent = ``;
@@ -110,6 +110,6 @@ function endGame() {
         choiceDisplay.textContent = ``
         let compSelect = document.querySelector('#computer-choice');
         compSelect.textContent = ``
-        alert ('You lost against a computer. Play again?')
+        alert (`You lost against a computer. Final Standing: Player: ${scoreboard.player} | Computer: ${scoreboard.computer} Play again?`)
     }
 }
