@@ -78,3 +78,27 @@ img {
     display: flex;
     justify-content: center;
 }
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.player {
+    border: 2px green solid;
+    width: 140px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer {
+    border: 2px green solid;
+    width: 140px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
