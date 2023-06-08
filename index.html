@@ -5,8 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src = script.js defer></script>
 </head>
 <body>
-    <script src = script.js></script>
+    <h1>ROCK, PAPER, AND SCISSORS!</h1>
+    <h2>CHOOSE YOUR WEAPON:</h2>
+    <h3>First to reach 5 points wins!</h3>
+    <div class="score-container">
+        <div class ="scores">
+            <p id="player-score">Player:</p>
+            <p id="computer-score">Computer:</p>
+        </div>
+    </div> 
+    <div class="btn-container">
+        <button id = "rock" value = "Rock">
+            <img src="./pic/rock.png">
+        </button>
+        <button id = "paper" value = "Paper">
+            <img src="./pic/paper.png">
+        </button>
+        <button id = "scissor" value = "Scissor">
+            <img src="./pic/scissors.png">
+        </button>
+    </div> 
+    <div class = "selection-container" >
+        <div class ="selection">
+            <p id="player">Player:</p>
+            <p id="comp">Computer:</p>
+        </div> 
+    </div>
+    <div class ="choice-container">
+        <div class="choices">
+            <div class = "player">
+                <p id = "player-selection"></p>
+            </div>
+            <div class="computer">
+                <p id = "computer-choice"></p>
+            </div>
+        </div>
+    </div>
+    <div class="result-container"> 
+        <p id ="result-container">Result:</p>
+        <p id ="result"></p>
+    </div>
 </body>
 </html>
